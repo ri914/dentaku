@@ -1,0 +1,53 @@
+body{
+    width: fit-content;
+    margin: 0;
+}
+#display{
+    background-color: black;
+    color: white;
+    width: 300px;
+    margin: 0;
+    border: solid;
+    height: 30px;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    margin: 0;
+}
+.p1{
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+}
+.p2{
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+}
+.p3{
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+}
+.p4{
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+}
+.btn2{
+    display: flex;
+    justify-content: space-between;
+}
+.p5{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+.p6{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
