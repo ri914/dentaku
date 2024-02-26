@@ -5,9 +5,15 @@ $(function() {
     let operatorclick=false;
     let result= '';
 
-    $('.num,.point').click(function() {
+$('.num').click(function() {
     if(result === '0'){
         result= '';
+    };
+    if(result === '0',''){
+        result = result.slice(0, -1);
+    };
+    if(result ==='00'){
+        result =result.slice(0,-2);
     };
     if(operatorclick){
         num2 +=$(this).text();
@@ -15,9 +21,22 @@ $(function() {
     else{
         num1 +=$(this).text();
     };
-    result +=$(this).text();
-    $('#display').val(result);
+result +=$(this).text();
+$('#display').val(result);
 });
+$('.point').click(function(){
+    if (result.includes('.') || result === '') {
+        return;
+    }
+    if(operatorclick){
+        num2 +=$(this).text();
+    }
+    else{
+        num1 +=$(this).text();
+    };
+result +=$(this).text();
+$('#display').val(result);
+})
 
 $('.reset').click(function(){
     num1= '';
@@ -41,6 +60,7 @@ $('.operator').click(function(){
 
 $('#equal').click(function(){
     let calculation;
+    
     if(operator == '+'){
         calculation=Number(num1) + Number(num2);
     }
@@ -53,7 +73,8 @@ $('#equal').click(function(){
     else if(operator == '/'){
         calculation=Number(num1) / Number(num2);
     }
-    $('#display').val(calculation);  
+    $('#display').val(calculation); 
+    
     
     num1 = String(calculation);
     num2 = '';
